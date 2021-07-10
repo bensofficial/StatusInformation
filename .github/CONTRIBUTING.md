@@ -30,4 +30,4 @@ public static void main(String[] args)
 }
 ```
 ### Behavior
-Please be friendly and value the work others did. More information in the CODE_OF_CONDUCT.md (https://github.com/bensofficial/StatusInformation/blob/master/.github/CODE_OF_CONDUCT.md) file.
+Please be friendly and value the work others did. More information in the [CODE_OF_CONDUCT.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CODE_OF_CONDUCT.md) file.
