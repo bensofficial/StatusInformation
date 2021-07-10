@@ -38,7 +38,7 @@ public final class Configuration {
 			Powered by [StatusInformation](https://github.com/bensofficial/StatusInformation) v1.0.0
 			""";
 
-	public static final String TELEGRAM_BOT_TOKEN = "abc";
+	public static final String TELEGRAM_BOT_TOKEN = "";
 	public static final String TELEGRAM_CHANNEL_ID = "";
 
 	private Configuration() {
