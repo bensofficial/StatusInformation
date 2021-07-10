@@ -9,9 +9,4 @@ public class TestSetup {
 	public void testTrue() {
 		assertTrue(true);
 	}
-	
-	@Test
-	public void testFalse() {
-		assertTrue(false);
-	}
 }
