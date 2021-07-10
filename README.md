@@ -17,7 +17,6 @@ Building:
 - Goals: ``clean compile assembly:single``
 
 ### Contributing
-Please have a look at:
 - https://github.com/bensofficial/StatusInformation/blob/master/.github/CODE_OF_CONDUCT.md
 - https://github.com/bensofficial/StatusInformation/blob/master/.github/CONTRIBUTING.md
-Feel free to contact the project manager: dev@benjamin-schmitz.org
+- Feel free to contact the project manager: dev@benjamin-schmitz.org
