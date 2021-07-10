@@ -1,4 +1,7 @@
 # StatusInformation
+![](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)
+![](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)
+
 Automated sending of status information
 
 ### Executing and Building in Eclipse
