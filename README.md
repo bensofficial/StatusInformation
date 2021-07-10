@@ -1,4 +1,6 @@
 # StatusInformation
+
+![](https://github.com/bensofficial/StatusInformation/actions/workflows/build.yml/badge.svg)
 ![](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)
 ![](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)
 
