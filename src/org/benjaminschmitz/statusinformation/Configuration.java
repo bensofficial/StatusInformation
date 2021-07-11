@@ -1,7 +1,6 @@
 package org.benjaminschmitz.statusinformation;
 
 public final class Configuration {
-
 	public static String DSB_USERNAME = "";
 	public static String DSB_PASSWORD = "";
 
