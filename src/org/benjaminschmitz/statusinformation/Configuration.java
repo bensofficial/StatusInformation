@@ -2,10 +2,15 @@ package org.benjaminschmitz.statusinformation;
 
 public final class Configuration {
 
-	public static final String DSB_USERNAME = "";
-	public static final String DSB_PASSWORD = "";
+	public static String DSB_USERNAME = "";
+	public static String DSB_PASSWORD = "";
 
 	public static final String SUBSTITUTIONPLAN_CLASS = "10";
+
+	/**
+	 * https://de.wikipedia.org/wiki/ISO_3166-2:DE; https://ferien-api.de
+	 */
+	public static final String LOCATION = "BY";
 
 	/**
 	 * Possible wildcards: [CLASSES] [PUPILGROUP] [HOUR] [NEWTEACHER] [NEWSUBJECT]
@@ -38,8 +43,8 @@ public final class Configuration {
 			Powered by [StatusInformation](https://github.com/bensofficial/StatusInformation) v1.0.0
 			""";
 
-	public static final String TELEGRAM_BOT_TOKEN = "";
-	public static final String TELEGRAM_CHANNEL_ID = "";
+	public static String TELEGRAM_BOT_TOKEN = "";
+	public static String TELEGRAM_CHANNEL_ID = "";
 
 	private Configuration() {
 	}
