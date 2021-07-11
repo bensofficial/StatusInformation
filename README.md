@@ -1,9 +1,9 @@
 # StatusInformation
 
-[![Execution](https://github.com/bensofficial/StatusInformation/actions/workflows/main.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/main.yml)
-![](https://github.com/bensofficial/StatusInformation/actions/workflows/build.yml/badge.svg)
-![](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)
-![](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)
+[![Execution](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml)
+[![Build](https://github.com/bensofficial/StatusInformation/actions/workflows/build.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/build.yml)
+[![Tests](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml)
+[![CodeQL](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml)
 
 Automated sending of status information
 
