@@ -2,7 +2,6 @@ package org.benjaminschmitz.statusinformation;
 
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.ParseException;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -15,7 +14,7 @@ import org.benjaminschmitz.statusinformation.senders.Senders;
 
 public class StatusInformation {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
 		if (args.length == 4) {
 			Configuration.DSB_USERNAME = args[0];
 			Configuration.DSB_PASSWORD = args[1];
@@ -33,6 +32,8 @@ public class StatusInformation {
 
 			System.out.println(message);
 			senders.sendToAll(message);
+		} else {
+			System.out.println("Weekend or Holiday");
 		}
 	}
 
