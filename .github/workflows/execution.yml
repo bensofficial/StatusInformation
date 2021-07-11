@@ -29,4 +29,4 @@ jobs:
           DSB_PASSWORD: ${{ secrets.DSB_PASSWORD }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: java -jar target/StatusInformation-1.0-jar-with-dependencies.jar $DSB_USERNAME $DSB_PASSWORD $TELEGRAM_CHANNEL_ID $TELEGRAM_BOT_TOKEN
+        run: java -jar target/StatusInformation-1.0.0-jar-with-dependencies.jar $DSB_USERNAME $DSB_PASSWORD $TELEGRAM_CHANNEL_ID $TELEGRAM_BOT_TOKEN
