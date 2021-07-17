@@ -1,7 +1,7 @@
 # StatusInformation
 
 [![Execution](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml)
-[![Build](https://github.com/bensofficial/StatusInformation/actions/workflows/build.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/build.yml)
+[![Compile](https://github.com/bensofficial/StatusInformation/actions/workflows/compile.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/compile.yml)
 [![Tests](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml)
 [![CodeQL](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml)
 
