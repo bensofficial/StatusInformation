@@ -1,11 +1,11 @@
-name: Build
+name: Compile
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
-  run_tests:
+  compile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -20,5 +20,5 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Build with Maven
-        run: mvn clean compile assembly:single
+      - name: Compile with Maven
+        run: mvn clean compile
