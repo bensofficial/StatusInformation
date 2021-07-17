@@ -6,7 +6,7 @@ on:
     # Winter time: Germany UTC+1 -> '0 6 * * *'
     - cron:  '0 5 * * *'
 jobs:
-  run_tests:
+  Execution:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
