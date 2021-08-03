@@ -1,13 +1,13 @@
 package org.benjaminschmitz.statusinformation.api;
 
 public class API {
-	private final DSBApi dsbAPI;
+	private final SubstitutionPlanApi substitutionPlanApi;
 
 	public API() {
-		dsbAPI = new DSBApi();
+		substitutionPlanApi = new SubstitutionPlanApi();
 	}
 
 	public String getSubstitutionPlan() {
-		return dsbAPI.get();
+		return substitutionPlanApi.get();
 	}
 }

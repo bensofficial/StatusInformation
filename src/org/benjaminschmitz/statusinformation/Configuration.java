@@ -32,15 +32,13 @@ public final class Configuration {
 	 * Styling: https://core.telegram.org/api/entities
 	 */
 	public static final String HEADER = """
-			*News*
+			*Vertretungsplan*
 			""";
 
 	/**
 	 * Styling: https://core.telegram.org/api/entities
 	 */
-	public static final String FOOTER = """
-			Powered by [StatusInformation](https://github.com/bensofficial/StatusInformation) v1.0.0
-			""";
+	public static final String FOOTER = "";
 
 	public static String TELEGRAM_BOT_TOKEN = "";
 	public static String TELEGRAM_CHANNEL_ID = "";
