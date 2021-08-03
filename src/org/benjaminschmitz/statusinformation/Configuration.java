@@ -20,6 +20,7 @@ public final class Configuration {
 	public static final String SUBSTITUTIONPLAN_FORMAT = """
 			########
 			Klasse: `[CLASSES]`
+			Gruppe: `[PUPILGROUP]`
 			Typ: `[TYPE]`
 			Stunde: `[HOUR]`
 			Neuer Lehrer: `[NEWTEACHER]`
