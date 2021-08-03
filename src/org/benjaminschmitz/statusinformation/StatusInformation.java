@@ -28,6 +28,12 @@ public class StatusInformation {
 
 			String message = api.getSubstitutionPlan();
 
+			if (message.isEmpty()) {
+				message = """
+						No substitutions for today.
+						""";
+			}
+
 			message = Configuration.HEADER + message + Configuration.FOOTER;
 
 			System.out.println(message);
