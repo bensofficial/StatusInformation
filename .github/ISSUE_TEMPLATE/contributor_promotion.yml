@@ -14,7 +14,7 @@ body:
     attributes:
       label: Further information.
       description: If you would like to share further information, feel free to write them down.
-      placeholder: e.g.: I want to help you programming the APIs.
+      placeholder: "e.g.: I want to help you programming the APIs."
     validations:
       required: false
   - type: checkboxes
