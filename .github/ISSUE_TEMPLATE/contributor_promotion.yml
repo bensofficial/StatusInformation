@@ -1,5 +1,5 @@
 name: contributor promotion
-about: "Open a issue to promote you for becoming a contributor of this repository."
+description: "Open a issue to promote you for becoming a contributor of this repository."
 title: "[CONTRIBUTOR PROMOTION]"
 labels: 'contributor promotion'
 assignees:
