@@ -9,7 +9,7 @@
 
 Automated sending of status information
 
-### Executing and Building
+## Executing and Building
 Running tests and jacoco:
 ````Shell
 mvn test
@@ -25,12 +25,12 @@ Building jar:
 ````Shell
 mvn clean compile assembly:single
 ````
-#### For execution with GitHub Actions
+### For execution with GitHub Actions
 For execution with GitHub Actions you can add the following values as secrets in GitHub:
-- ``DSB_USERNAME``
-- ``DSB_PASSWORD``
-- ``TELEGRAM_CHANNEL_ID``
-- ``TELEGRAM_BOT_TOKEN``
+-	``DSB_USERNAME``
+-	``DSB_PASSWORD``
+-	``TELEGRAM_CHANNEL_ID``
+-	``TELEGRAM_BOT_TOKEN``
 
 After building you can use these as a parameter:
 ````yml
@@ -41,15 +41,16 @@ After building you can use these as a parameter:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: java -jar target/StatusInformation-1.0.0-jar-with-dependencies.jar $DSB_USERNAME $DSB_PASSWORD $TELEGRAM_CHANNEL_ID $TELEGRAM_BOT_TOKEN
 ````
-### Update for new version
+## Update for new version
 See [here](https://semver.org) for additional information of version naming.
 
-1. ``pom.xml``
-2. ``.github/workflows/execution.yml``
-3. ``README.md``
-4. ``src/org/benjaminschmitz/statusinformation/Configuration.java``
-5. Create new release
-### Additional information
+1.	``pom.xml``
+2.	``.github/workflows/execution.yml``
+3.	``README.md``
+4.	``src/org/benjaminschmitz/statusinformation/Configuration.java``
+5.	Create new release
+
+## Additional information
 - [CODE_OF_CONDUCT.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CODE_OF_CONDUCT.md)
 - [CONTRIBUTING.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CONTRIBUTING.md)
 - Feel free to contact the project manager: dev@benjamin-schmitz.org
