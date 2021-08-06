@@ -46,7 +46,7 @@ public class SubstitutionPlanApi implements APIInterface {
 
 				substitutionPlans.add(new SubstitutionPlan(substitutionPlanEntries, getDate(URL)));
 			}
-		} catch (RuntimeException e) {
+		} catch (IOException e) {
 			return """
 					SubstitutionPlanApi: Unable to parse substitution plan web page.
 					""";
@@ -115,13 +115,9 @@ public class SubstitutionPlanApi implements APIInterface {
 		return result;
 	}
 
-	public List<SubstitutionPlanEntry> parseWebPage(String URL) {
-		org.jsoup.nodes.Document doc;
-		try {
-			doc = Jsoup.connect(URL).get();
-		} catch (IOException e) {
-			throw new RuntimeException();
-		}
+	public List<SubstitutionPlanEntry> parseWebPage(String URL) throws IOException {
+		org.jsoup.nodes.Document doc = Jsoup.connect(URL).get();
+
 		org.jsoup.select.Elements rows = doc.select("tr");
 
 		List<SubstitutionPlanEntry> result = new LinkedList<>();
@@ -196,25 +192,18 @@ class SubstitutionPlanEntry {
 	private final String oldSubject;
 	private final String remark;
 
-	public SubstitutionPlanEntry(String classes, String pupilGroup, String hour, String newTeacher, String newSubject,
-			String room, String type, String movedFrom, String oldTeacher, String oldSubject, String remark) {
-		this.classes = classes;
-		this.pupilGroup = pupilGroup;
-		this.hour = hour;
-		this.newTeacher = newTeacher;
-		this.newSubject = newSubject;
-		this.room = room;
-		this.type = type;
-		this.movedFrom = movedFrom;
-		this.oldTeacher = oldTeacher;
-		this.oldSubject = oldSubject;
-		this.remark = remark;
-	}
-
 	public SubstitutionPlanEntry(org.jsoup.select.Elements columns) {
-		this(columns.get(0).text(), columns.get(1).text(), columns.get(2).text(), columns.get(3).text(),
-				columns.get(4).text(), columns.get(5).text(), columns.get(6).text(), columns.get(7).text(),
-				columns.get(8).text(), columns.get(9).text(), columns.get(10).text());
+		this.classes = columns.get(0).text();
+		this.pupilGroup = columns.get(1).text();
+		this.hour = columns.get(2).text();
+		this.newTeacher = columns.get(3).text();
+		this.newSubject = columns.get(4).text();
+		this.room = columns.get(5).text();
+		this.type = columns.get(6).text();
+		this.movedFrom = columns.get(7).text();
+		this.oldTeacher = columns.get(8).text();
+		this.oldSubject = columns.get(9).text();
+		this.remark = columns.get(10).text();
 	}
 
 	public String getClasses() {

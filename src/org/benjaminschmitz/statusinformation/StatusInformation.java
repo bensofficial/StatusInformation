@@ -59,7 +59,7 @@ public class StatusInformation {
 		String JSON;
 		try {
 			JSON = get(URL);
-		} catch (RuntimeException e) {
+		} catch (IOException e) {
 			return false;
 		}
 
@@ -85,8 +85,10 @@ public class StatusInformation {
 
 	/**
 	 * https://stackoverflow.com/questions/31462/how-to-fetch-html-in-java
+	 * 
+	 * @throws IOException
 	 */
-	public static String get(String URL) {
+	public static String get(String URL) throws IOException {
 		String content = null;
 		URLConnection connection = null;
 		try {
@@ -96,7 +98,7 @@ public class StatusInformation {
 			content = scanner.next();
 			scanner.close();
 		} catch (IOException | NoSuchElementException | IllegalStateException e) {
-			throw new RuntimeException();
+			throw new IOException();
 		}
 
 		return content;
