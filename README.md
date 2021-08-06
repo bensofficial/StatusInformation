@@ -4,6 +4,7 @@
 [![Compilation](https://github.com/bensofficial/StatusInformation/actions/workflows/compilation.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/compilation.yml)
 [![Tests](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml)
 [![CodeQL](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4a362a6b8a5d496f93200f81d5a62446)](https://www.codacy.com/gh/bensofficial/StatusInformation/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bensofficial/StatusInformation&amp;utm_campaign=Badge_Grade)
 
 Automated sending of status information
 
