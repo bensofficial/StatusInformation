@@ -9,61 +9,28 @@ import org.benjaminschmitz.statusinformation.Configuration;
 import jakarta.ws.rs.core.UriBuilder;
 
 public class TelegramSender implements Sender {
-<<<<<<< HEAD
-  public void send(String message) {
-    HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5))
-        .version(HttpClient.Version.HTTP_2).build();
-=======
     public void send(String message) {
         HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5))
                 .version(HttpClient.Version.HTTP_2).build();
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
 
-<<<<<<< HEAD
-    UriBuilder builder = UriBuilder.fromUri("https://api.telegram.org").path("/{token}/sendMessage")
-        .queryParam("parse_mode", "Markdown")
-        .queryParam("chat_id", Configuration.TELEGRAM_CHANNEL_ID).queryParam("text", message)
-        .queryParam("disable_web_page_preview", "1");
-=======
         UriBuilder builder = UriBuilder.fromUri("https://api.telegram.org")
                 .path("/{token}/sendMessage").queryParam("parse_mode", "Markdown")
                 .queryParam("chat_id", Configuration.TELEGRAM_CHANNEL_ID)
                 .queryParam("text", message).queryParam("disable_web_page_preview", "1");
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
 
-<<<<<<< HEAD
-    HttpRequest request =
-        HttpRequest.newBuilder().GET().uri(builder.build("bot" + Configuration.TELEGRAM_BOT_TOKEN))
-            .timeout(Duration.ofSeconds(5)).build();
-=======
         HttpRequest request = HttpRequest.newBuilder().GET()
                 .uri(builder.build("bot" + Configuration.TELEGRAM_BOT_TOKEN))
                 .timeout(Duration.ofSeconds(5)).build();
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
 
-<<<<<<< HEAD
-    HttpResponse<String> response;
-    try {
-      response = client.send(request, HttpResponse.BodyHandlers.ofString());
-    } catch (IOException | InterruptedException e) {
-      throw new RuntimeException("TelegramSender: Error while making HTTP request.");
-    }
-=======
         HttpResponse<String> response;
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException("TelegramSender: Error while making HTTP request.");
         }
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
 
-<<<<<<< HEAD
-    System.out.println(response.statusCode());
-    System.out.println(response.body());
-  }
-=======
         System.out.println(response.statusCode());
         System.out.println(response.body());
     }
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
+
 }
