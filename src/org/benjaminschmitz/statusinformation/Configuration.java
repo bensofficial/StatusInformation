@@ -8,8 +8,6 @@ public final class Configuration {
 
 	/**
 	 * https://de.wikipedia.org/wiki/ISO_3166-2:DE; https://ferien-api.de
-	 * 
-	 * Location in Germany
 	 */
 	public static final String LOCATION = "BY";
 
