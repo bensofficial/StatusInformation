@@ -3,6 +3,7 @@
 [![Execution](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml)
 [![Compile](https://github.com/bensofficial/StatusInformation/actions/workflows/compile.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/compile.yml)
 [![Tests](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml)
+[![Java CI](https://github.com/bensofficial/StatusInformation/actions/workflows/java-ci.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/java-ci.yml)
 [![CodeQL](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml)
 
 Automated sending of status information
