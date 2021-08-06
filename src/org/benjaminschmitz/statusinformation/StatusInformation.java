@@ -91,7 +91,7 @@ public class StatusInformation {
 	/**
 	 * https://stackoverflow.com/questions/31462/how-to-fetch-html-in-java
 	 */
-	static String get(String URL) {
+	public static String get(String URL) {
 		String content = null;
 		URLConnection connection = null;
 		try {
@@ -122,8 +122,12 @@ class Holidays {
 	}
 
 	public Holidays(String start, String end) {
+		this(parseString(start), parseString(end));
+	}
+
+	public static Date parseString(String date) {
 		// Ading the seconds
-		this(Date.from(Instant.parse(start.replace("Z", ":00Z"))), Date.from(Instant.parse(end.replace("Z", ":00Z"))));
+		return Date.from(Instant.parse(date.replace("Z", ":00Z")));
 	}
 
 	public Date getStart() {
