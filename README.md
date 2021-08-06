@@ -54,5 +54,3 @@ See [here](https://semver.org) for additional information of version naming.
  
 The project started on July 9 2021 by [@bensofficial](https://github.com/bensofficial).
 
-### External sources:
-- Style guide from https://github.com/google/styleguide/ licensed under Apache-2.0 License. Slightly changed.
