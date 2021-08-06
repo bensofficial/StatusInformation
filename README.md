@@ -1,5 +1,6 @@
 # StatusInformation
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b0d78f1337024cddab5103b34862fd88)](https://app.codacy.com/gh/bensofficial/StatusInformation?utm_source=github.com&utm_medium=referral&utm_content=bensofficial/StatusInformation&utm_campaign=Badge_Grade_Settings)
 [![Execution](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/execution.yml)
 [![Compilation](https://github.com/bensofficial/StatusInformation/actions/workflows/compilation.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/compilation.yml)
 [![Tests](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml)
