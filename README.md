@@ -4,7 +4,6 @@
 [![Compilation](https://github.com/bensofficial/StatusInformation/actions/workflows/compilation.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/compilation.yml)
 [![Tests](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/tests.yml)
 [![CodeQL](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/codeql-analysis.yml)
-[![Auto-Format](https://github.com/bensofficial/StatusInformation/actions/workflows/auto-format.yml/badge.svg)](https://github.com/bensofficial/StatusInformation/actions/workflows/auto-format.yml)
 
 Automated sending of status information
 
