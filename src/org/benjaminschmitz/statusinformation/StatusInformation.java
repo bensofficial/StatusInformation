@@ -54,8 +54,9 @@ public class StatusInformation {
         }
     }
 
-<<<<<<< HEAD
-	/**
+    <<<<<<<HEAD
+
+    /**
 	 * https://stackoverflow.com/questions/31993153/java-split-string-on-comma-except-when-between-parenthesis
 	 * 
 	 * https://stackoverflow.com/questions/2591098/how-to-parse-json-in-java
@@ -69,6 +70,7 @@ public class StatusInformation {
 			return false;
 		}
 =======
+
     /**
      * https://stackoverflow.com/questions/31993153/java-split-string-on-comma-except-when-between-parenthesis
      * 
@@ -104,28 +106,29 @@ public class StatusInformation {
         return size >= 1;
     }
 
-<<<<<<< HEAD
-	/**
-	 * https://stackoverflow.com/questions/31462/how-to-fetch-html-in-java
-	 * 
-	 * @throws Exception
-	 */
-	static String get(String URL) {
-		String content = null;
-		URLConnection connection = null;
-		try {
-			connection = new URL(URL).openConnection();
-			Scanner scanner = new Scanner(connection.getInputStream());
-			scanner.useDelimiter("\\Z");
-			content = scanner.next();
-			scanner.close();
-		} catch (IOException | NoSuchElementException | IllegalStateException e) {
-			throw new RuntimeException();
-		}
+    <<<<<<<HEAD
 
-		return content;
-	}
-=======
+    /**
+     * https://stackoverflow.com/questions/31462/how-to-fetch-html-in-java
+     * 
+     * @throws Exception
+     */
+    static String get(String URL) {
+        String content = null;
+        URLConnection connection = null;
+        try {
+            connection = new URL(URL).openConnection();
+            Scanner scanner = new Scanner(connection.getInputStream());
+            scanner.useDelimiter("\\Z");
+            content = scanner.next();
+            scanner.close();
+        } catch (IOException | NoSuchElementException | IllegalStateException e) {
+            throw new RuntimeException();
+        }
+
+        return content;
+    }=======
+
     /**
      * https://stackoverflow.com/questions/31462/how-to-fetch-html-in-java
      * 
@@ -144,8 +147,9 @@ public class StatusInformation {
             throw new Exception();
         }
         return content;
-    }
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
+    }>>>>>>>branch'main'
+
+    of https:// github.com/bensofficial/StatusInformation.git
 }
 
 
@@ -153,18 +157,20 @@ class Holidays {
     private final Date start;
     private final Date end;
 
-<<<<<<< HEAD
-	public Holidays(Date start, Date end) {
-		this.start = start;
-		this.end = end;
+    <<<<<<<HEAD
 
-	}
-=======
     public Holidays(Date start, Date end) {
         this.start = start;
         this.end = end;
-    }
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
+
+    }=======
+
+    public Holidays(Date start, Date end) {
+        this.start = start;
+        this.end = end;
+    }>>>>>>>branch'main'
+
+    of https:// github.com/bensofficial/StatusInformation.git
 
     public Holidays(String start, String end) {
         // Ading the seconds
@@ -180,15 +186,17 @@ class Holidays {
         return end;
     }
 
-<<<<<<< HEAD
-	@Override
-	public String toString() {
-		return "Holiday from " + start + " to " + end;
-	}
-=======
+    <<<<<<<HEAD
+
     @Override
     public String toString() {
         return "Holiday from " + start + " to " + end;
-    }
->>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
+    }=======
+
+    @Override
+    public String toString() {
+        return "Holiday from " + start + " to " + end;
+    }>>>>>>>branch'main'
+
+    of https:// github.com/bensofficial/StatusInformation.git
 }
