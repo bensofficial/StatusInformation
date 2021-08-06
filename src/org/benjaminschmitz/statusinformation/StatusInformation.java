@@ -45,12 +45,8 @@ public class StatusInformation {
 	}
 
 	static boolean isWeekend(Calendar today) {
-		if (today.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
-				|| today.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-			return true;
-		} else {
-			return false;
-		}
+		return today.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
+				|| today.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY;
 	}
 
 	/**
