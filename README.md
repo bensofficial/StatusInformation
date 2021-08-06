@@ -8,9 +8,21 @@
 Automated sending of status information
 
 ### Executing and Building
-Running tests: ``mvn -B test --file pom.xml``
+Running tests:
+````Shell
+mvn test
+````
 
-Building: ``mvn clean compile assembly:single``
+Running SpotBugs:
+````Shell
+mvn clean compile
+mvn spotbugs:spotbugs spotbugs:gui
+````
+
+Building jar:
+````Shell
+mvn clean compile assembly:single
+````
 #### For execution with GitHub Actions
 For execution with GitHub Actions you can add the following values as secrets in GitHub:
 - ``DSB_USERNAME``
