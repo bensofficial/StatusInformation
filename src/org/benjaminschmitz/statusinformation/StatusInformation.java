@@ -1,11 +1,13 @@
 package org.benjaminschmitz.statusinformation;
 
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import org.json.*;
@@ -62,7 +64,7 @@ public class StatusInformation {
 		String JSON;
 		try {
 			JSON = get(URL);
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			return false;
 		}
 
@@ -91,7 +93,7 @@ public class StatusInformation {
 	 * 
 	 * @throws Exception
 	 */
-	static String get(String URL) throws Exception {
+	static String get(String URL) {
 		String content = null;
 		URLConnection connection = null;
 		try {
@@ -100,9 +102,10 @@ public class StatusInformation {
 			scanner.useDelimiter("\\Z");
 			content = scanner.next();
 			scanner.close();
-		} catch (Exception ex) {
-			throw new Exception();
+		} catch (IOException | NoSuchElementException | IllegalStateException e) {
+			throw new RuntimeException();
 		}
+
 		return content;
 	}
 }
@@ -114,6 +117,7 @@ class Holidays {
 	public Holidays(Date start, Date end) {
 		this.start = start;
 		this.end = end;
+
 	}
 
 	public Holidays(String start, String end) {
