@@ -10,7 +10,7 @@
 Automated sending of status information
 
 ### Executing and Building
-Running tests and generating Jacoco output:
+Running tests and jacoco:
 ````Shell
 mvn test
 ````
