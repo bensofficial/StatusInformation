@@ -5,8 +5,15 @@ import org.junit.jupiter.api.Test;
 
 public class TestSetup {
 
+<<<<<<< HEAD
   @Test
   public void testTrue() {
     assertTrue(true);
   }
+=======
+    @Test
+    public void testTrue() {
+        assertTrue(true);
+    }
+>>>>>>> branch 'main' of https://github.com/bensofficial/StatusInformation.git
 }
