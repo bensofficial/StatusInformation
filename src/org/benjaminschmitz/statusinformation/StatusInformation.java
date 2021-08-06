@@ -9,7 +9,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-
 import org.json.*;
 import org.benjaminschmitz.statusinformation.api.API;
 import org.benjaminschmitz.statusinformation.senders.Senders;
