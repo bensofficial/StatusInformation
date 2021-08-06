@@ -23,8 +23,10 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+      - name: Echoing the jacoco output
+        run: cat target/site/jacoco/jacoco.xml
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: target/site/jacoco/jacoco*.xml
+          coverage-reports: target/site/jacoco/jacoco.xml
