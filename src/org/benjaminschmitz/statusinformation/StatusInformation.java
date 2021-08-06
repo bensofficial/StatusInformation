@@ -112,7 +112,7 @@ class Holidays {
 	private final Date end;
 
 	public Holidays(Date start, Date end) {
-		if (start.before(end)) {
+		if (end.before(start)) {
 			throw new IllegalArgumentException();
 		}
 
