@@ -20,4 +20,8 @@ public class Senders {
 			}
 		}
 	}
+
+	public List<Sender> getSenders() {
+		return senders;
+	}
 }
