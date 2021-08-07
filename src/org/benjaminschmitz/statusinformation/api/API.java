@@ -10,4 +10,8 @@ public class API {
 	public String getSubstitutionPlan() {
 		return substitutionPlanApi.get();
 	}
+
+	public SubstitutionPlanApi getSubstitutionPlanApi() {
+		return substitutionPlanApi;
+	}
 }
