@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class APITest {
-
 	@Test
 	void testGetSubstitutionPlanApi() {
 		API api = new API();
@@ -13,5 +12,4 @@ class APITest {
 
 		assertNotNull(substitutionPlanApi);
 	}
-
 }
