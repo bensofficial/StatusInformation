@@ -14,7 +14,6 @@ import org.benjaminschmitz.statusinformation.api.API;
 import org.benjaminschmitz.statusinformation.senders.Senders;
 
 public class StatusInformation {
-
 	public static void main(String[] args) {
 		if (args.length == 4) {
 			ConfigurationUtil.DSB_USERNAME = args[0];

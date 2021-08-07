@@ -18,13 +18,14 @@ public class TelegramSender implements Sender {
 				.queryParam("text", message).queryParam("disable_web_page_preview", "1");
 
 		HttpRequest request = HttpRequest.newBuilder().GET()
-				.uri(builder.build("bot" + ConfigurationUtil.TELEGRAM_BOT_TOKEN)).timeout(Duration.ofSeconds(5)).build();
+				.uri(builder.build("bot" + ConfigurationUtil.TELEGRAM_BOT_TOKEN)).timeout(Duration.ofSeconds(5))
+				.build();
 
 		HttpResponse<String> response;
 		try {
 			response = client.send(request, HttpResponse.BodyHandlers.ofString());
 		} catch (IOException | InterruptedException e) {
-			throw new RuntimeException("TelegramSender: Error while making HTTP request.");
+			throw new SendingException("TelegramSender: Error while making HTTP request.");
 		}
 
 		System.out.println(response.statusCode());

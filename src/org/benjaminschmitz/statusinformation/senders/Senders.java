@@ -13,7 +13,11 @@ public class Senders {
 
 	public void sendToAll(String message) {
 		for (Sender sender : senders) {
-			sender.send(message);
+			try {
+				sender.send(message);
+			} catch (SendingException e) {
+				System.err.println(e);
+			}
 		}
 	}
 }
