@@ -5,7 +5,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
-import org.benjaminschmitz.statusinformation.Configuration;
+import org.benjaminschmitz.statusinformation.ConfigurationUtil;
 import jakarta.ws.rs.core.UriBuilder;
 
 public class TelegramSender implements Sender {
@@ -14,11 +14,11 @@ public class TelegramSender implements Sender {
 				.version(HttpClient.Version.HTTP_2).build();
 
 		UriBuilder builder = UriBuilder.fromUri("https://api.telegram.org").path("/{token}/sendMessage")
-				.queryParam("parse_mode", "Markdown").queryParam("chat_id", Configuration.TELEGRAM_CHANNEL_ID)
+				.queryParam("parse_mode", "Markdown").queryParam("chat_id", ConfigurationUtil.TELEGRAM_CHANNEL_ID)
 				.queryParam("text", message).queryParam("disable_web_page_preview", "1");
 
 		HttpRequest request = HttpRequest.newBuilder().GET()
-				.uri(builder.build("bot" + Configuration.TELEGRAM_BOT_TOKEN)).timeout(Duration.ofSeconds(5)).build();
+				.uri(builder.build("bot" + ConfigurationUtil.TELEGRAM_BOT_TOKEN)).timeout(Duration.ofSeconds(5)).build();
 
 		HttpResponse<String> response;
 		try {

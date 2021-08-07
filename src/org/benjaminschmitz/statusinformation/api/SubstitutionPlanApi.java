@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import org.benjaminschmitz.statusinformation.Configuration;
+import org.benjaminschmitz.statusinformation.ConfigurationUtil;
 import org.jsoup.Jsoup;
 import de.sematre.dsbmobile.DSBMobile;
 import de.sematre.dsbmobile.DSBMobile.TimeTable;
@@ -21,7 +21,7 @@ public class SubstitutionPlanApi implements APIInterface {
 	private final DSBMobile dsbMobile;
 
 	public SubstitutionPlanApi() {
-		dsbMobile = new DSBMobile(Configuration.DSB_USERNAME, Configuration.DSB_PASSWORD);
+		dsbMobile = new DSBMobile(ConfigurationUtil.DSB_USERNAME, ConfigurationUtil.DSB_PASSWORD);
 	}
 
 	public String get() {
@@ -41,7 +41,7 @@ public class SubstitutionPlanApi implements APIInterface {
 				List<SubstitutionPlanEntry> substitutionPlanEntries = parseWebPage(URL);
 
 				substitutionPlanEntries = substitutionPlanEntries.stream()
-						.filter((t) -> t.getClasses().contains(Configuration.SUBSTITUTIONPLAN_CLASS))
+						.filter((t) -> t.getClasses().contains(ConfigurationUtil.SUBSTITUTIONPLAN_CLASS))
 						.collect(Collectors.toList());
 
 				substitutionPlans.add(new SubstitutionPlan(substitutionPlanEntries, getDate(URL)));
@@ -99,7 +99,7 @@ public class SubstitutionPlanApi implements APIInterface {
 	}
 
 	public String generateMessage(SubstitutionPlanEntry dsbSubstitutionPlanEntry) {
-		String result = Configuration.SUBSTITUTIONPLAN_FORMAT;
+		String result = ConfigurationUtil.SUBSTITUTIONPLAN_FORMAT;
 
 		result = result.replace("[CLASSES]", dsbSubstitutionPlanEntry.getClasses());
 		result = result.replace("[PUPILGROUP]", dsbSubstitutionPlanEntry.getPupilGroup());

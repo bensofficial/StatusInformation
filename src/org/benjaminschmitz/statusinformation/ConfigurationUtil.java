@@ -1,6 +1,6 @@
 package org.benjaminschmitz.statusinformation;
 
-public final class Configuration {
+public final class ConfigurationUtil {
 	public static String DSB_USERNAME = "";
 	public static String DSB_PASSWORD = "";
 
@@ -44,6 +44,6 @@ public final class Configuration {
 	public static String TELEGRAM_BOT_TOKEN = "";
 	public static String TELEGRAM_CHANNEL_ID = "";
 
-	private Configuration() {
+	private ConfigurationUtil() {
 	}
 }

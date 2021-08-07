@@ -17,10 +17,10 @@ public class StatusInformation {
 
 	public static void main(String[] args) {
 		if (args.length == 4) {
-			Configuration.DSB_USERNAME = args[0];
-			Configuration.DSB_PASSWORD = args[1];
-			Configuration.TELEGRAM_CHANNEL_ID = args[2];
-			Configuration.TELEGRAM_BOT_TOKEN = args[3];
+			ConfigurationUtil.DSB_USERNAME = args[0];
+			ConfigurationUtil.DSB_PASSWORD = args[1];
+			ConfigurationUtil.TELEGRAM_CHANNEL_ID = args[2];
+			ConfigurationUtil.TELEGRAM_BOT_TOKEN = args[3];
 		}
 
 		if (!isWeekend(Calendar.getInstance()) && !isHoliday(new Date())) {
@@ -35,7 +35,7 @@ public class StatusInformation {
 						""";
 			}
 
-			message = Configuration.HEADER + message + Configuration.FOOTER;
+			message = ConfigurationUtil.HEADER + message + ConfigurationUtil.FOOTER;
 
 			System.out.println(message);
 			senders.sendToAll(message);
@@ -55,7 +55,7 @@ public class StatusInformation {
 	 * https://stackoverflow.com/questions/2591098/how-to-parse-json-in-java
 	 */
 	static boolean isHoliday(Date day) {
-		String URL = "https://ferien-api.de/api/v1/holidays/" + Configuration.LOCATION;
+		String URL = "https://ferien-api.de/api/v1/holidays/" + ConfigurationUtil.LOCATION;
 		String JSON;
 		try {
 			JSON = get(URL);
