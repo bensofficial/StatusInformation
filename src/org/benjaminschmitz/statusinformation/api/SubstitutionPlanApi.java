@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -71,7 +70,7 @@ public class SubstitutionPlanApi implements APIInterface {
 		}
 	}
 
-	public String getDate(String URL) {
+	public static String getDate(String URL) {
 		String HTML = getHTML(URL);
 
 		HTML = HTML.substring(HTML.indexOf("<div class=\"mon_title\">"));
@@ -83,7 +82,7 @@ public class SubstitutionPlanApi implements APIInterface {
 	/*
 	 * https://stackoverflow.com/questions/31462/how-to-fetch-html-in-java
 	 */
-	public String getHTML(String URL) {
+	public static String getHTML(String URL) {
 		String content = null;
 		URLConnection connection = null;
 		try {
@@ -161,8 +160,7 @@ class SubstitutionPlan {
 	}
 
 	public SubstitutionPlan(List<SubstitutionPlanEntry> substitutionPlanEntries, String date) {
-		this(substitutionPlanEntries,
-				LocalDateTime.parse(date, DateTimeFormatter.ofPattern("dd.MM-yyyy")).toLocalDate());
+		this(substitutionPlanEntries, LocalDate.parse(date, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 	}
 
 	public List<SubstitutionPlanEntry> getSubstitutionPlanEntries() {
@@ -175,6 +173,28 @@ class SubstitutionPlan {
 
 	public boolean isToday() {
 		return date.equals(LocalDate.now());
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SubstitutionPlan other = (SubstitutionPlan) obj;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (substitutionPlanEntries == null) {
+			if (other.substitutionPlanEntries != null)
+				return false;
+		} else if (!substitutionPlanEntries.equals(other.substitutionPlanEntries))
+			return false;
+		return true;
 	}
 }
 

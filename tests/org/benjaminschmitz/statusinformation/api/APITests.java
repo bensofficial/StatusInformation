@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class APITest {
+class APITests {
 	@Test
 	void testGetSubstitutionPlanApi() {
 		API api = new API();
