@@ -4,7 +4,7 @@ public final class ConfigurationUtil {
 	public static String DSB_USERNAME = "";
 	public static String DSB_PASSWORD = "";
 
-	public static final String SUBSTITUTIONPLAN_CLASS = "10";
+	public static final String SUBSTITUTIONPLAN_CLASS = "11";
 
 	/**
 	 * https://de.wikipedia.org/wiki/ISO_3166-2:DE; https://ferien-api.de
@@ -12,20 +12,17 @@ public final class ConfigurationUtil {
 	public static final String LOCATION = "BY";
 
 	/**
-	 * Possible wildcards: [CLASSES] [PUPILGROUP] [HOUR] [NEWTEACHER] [NEWSUBJECT]
-	 * [ROOM] [TYPE] [MOVEDFROM] [OLDTEACHER] [OLDSUBJECT] [REMARK]
+	 * Possible wildcards: [CLASSES] [HOUR] [TEACHER] [SUBJECT] [ROOM] [TEXT]
+	 * [TEXT2]
 	 * 
 	 * Styling: https://core.telegram.org/api/entities
 	 */
 	public static final String SUBSTITUTIONPLAN_FORMAT = """
 			########
-			Klasse: `[CLASSES]`
-			Gruppe: `[PUPILGROUP]`
-			Typ: `[TYPE]`
 			Stunde: `[HOUR]`
-			Neuer Lehrer: `[NEWTEACHER]`
-			Neues Fach: `[NEWSUBJECT]`
-			Bemerkung: `[REMARK]`
+			Lehrer: `[TEACHER]`
+			Fach: `[SUBJECT]`
+			Text: `[TEXT]`
 			########
 			""";
 

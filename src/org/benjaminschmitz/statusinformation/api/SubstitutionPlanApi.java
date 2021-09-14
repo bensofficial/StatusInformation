@@ -45,7 +45,7 @@ public class SubstitutionPlanApi implements APIInterface {
 
 				substitutionPlans.add(new SubstitutionPlan(substitutionPlanEntries, getDate(URL)));
 			}
-		} catch (IOException e) {
+		} catch (IOException | IndexOutOfBoundsException e) {
 			return """
 					SubstitutionPlanApi: Unable to parse substitution plan web page.
 					""";
@@ -74,9 +74,39 @@ public class SubstitutionPlanApi implements APIInterface {
 		String HTML = getHTML(URL);
 
 		HTML = HTML.substring(HTML.indexOf("<div class=\"mon_title\">"));
-		HTML = HTML.substring(HTML.indexOf(">"));
+		HTML = HTML.substring(HTML.indexOf(">") + 1);
 		HTML = HTML.substring(0, HTML.indexOf(" "));
+
+		// Adding zeros
+		HTML = formatDay(HTML);
+		HTML = formatMonth(HTML);
+
 		return HTML;
+	}
+
+	public static String formatDay(String string) {
+		String day = string.substring(0, string.indexOf("."));
+		String rest = string.substring(string.indexOf("."));
+
+		if (day.length() == 1) {
+			day = "0" + day;
+			string = day + rest;
+		}
+
+		return string;
+	}
+
+	public static String formatMonth(String string) {
+		String month = string.substring(string.indexOf(".") + 1);
+		month = month.substring(0, month.indexOf("."));
+
+		String newMonth;
+		if (month.length() == 1) {
+			newMonth = "0" + month;
+			string = string.replace("." + month + ".", "." + newMonth + ".");
+		}
+
+		return string;
 	}
 
 	/*
@@ -101,16 +131,13 @@ public class SubstitutionPlanApi implements APIInterface {
 		String result = ConfigurationUtil.SUBSTITUTIONPLAN_FORMAT;
 
 		result = result.replace("[CLASSES]", dsbSubstitutionPlanEntry.getClasses());
-		result = result.replace("[PUPILGROUP]", dsbSubstitutionPlanEntry.getPupilGroup());
 		result = result.replace("[HOUR]", dsbSubstitutionPlanEntry.getHour());
-		result = result.replace("[NEWTEACHER]", dsbSubstitutionPlanEntry.getNewTeacher());
-		result = result.replace("[NEWSUBJECT]", dsbSubstitutionPlanEntry.getNewSubject());
+		result = result.replace("[TEACHER]", dsbSubstitutionPlanEntry.getTeacher());
+		result = result.replace("[SUBJECT]", dsbSubstitutionPlanEntry.getSubject());
 		result = result.replace("[ROOM]", dsbSubstitutionPlanEntry.getRoom());
-		result = result.replace("[TYPE]", dsbSubstitutionPlanEntry.getType());
-		result = result.replace("[MOVEDFROM]", dsbSubstitutionPlanEntry.getMovedFrom());
-		result = result.replace("[OLDTEACHER]", dsbSubstitutionPlanEntry.getNewTeacher());
-		result = result.replace("[OLDSUBJECT]", dsbSubstitutionPlanEntry.getNewSubject());
-		result = result.replace("[REMARK]", dsbSubstitutionPlanEntry.getRemark());
+		result = result.replace("[TEXT]", dsbSubstitutionPlanEntry.getText());
+		result = result.replace("[TEXT2]", dsbSubstitutionPlanEntry.getText2());
+
 		return result;
 	}
 
@@ -201,72 +228,52 @@ class SubstitutionPlan {
 class SubstitutionPlanEntry {
 
 	private final String classes;
-	private final String pupilGroup;
 	private final String hour;
-	private final String newTeacher;
-	private final String newSubject;
+	private final String teacher;
+	private final String subject;
 	private final String room;
-	private final String type;
-	private final String movedFrom;
-	private final String oldTeacher;
-	private final String oldSubject;
-	private final String remark;
+	private final String text;
+	private final String text2;
 
 	public SubstitutionPlanEntry(org.jsoup.select.Elements columns) {
 		this.classes = columns.get(0).text();
-		this.pupilGroup = columns.get(1).text();
-		this.hour = columns.get(2).text();
-		this.newTeacher = columns.get(3).text();
-		this.newSubject = columns.get(4).text();
-		this.room = columns.get(5).text();
-		this.type = columns.get(6).text();
-		this.movedFrom = columns.get(7).text();
-		this.oldTeacher = columns.get(8).text();
-		this.oldSubject = columns.get(9).text();
-		this.remark = columns.get(10).text();
+		this.hour = columns.get(1).text();
+		this.teacher = columns.get(2).text();
+		this.subject = columns.get(3).text();
+		this.room = columns.get(4).text();
+		this.text = columns.get(5).text();
+		this.text2 = columns.get(6).text();
 	}
 
 	public String getClasses() {
 		return classes;
 	}
 
-	public String getPupilGroup() {
-		return pupilGroup;
-	}
-
 	public String getHour() {
 		return hour;
 	}
 
-	public String getNewTeacher() {
-		return newTeacher;
+	public String getTeacher() {
+		return teacher;
 	}
 
-	public String getNewSubject() {
-		return newSubject;
+	public String getSubject() {
+		return subject;
 	}
 
 	public String getRoom() {
 		return room;
 	}
 
-	public String getType() {
-		return type;
+	public String getText() {
+		return text;
 	}
 
-	public String getMovedFrom() {
-		return movedFrom;
+	public String getText2() {
+		return text2;
 	}
 
-	public String getOldTeacher() {
-		return oldTeacher;
-	}
-
-	public String getOldSubject() {
-		return oldSubject;
-	}
-
-	public String getRemark() {
-		return remark;
+	public String toString() {
+		return getClasses();
 	}
 }

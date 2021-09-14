@@ -28,8 +28,11 @@ public class TelegramSender implements Sender {
 			throw new SendingException("TelegramSender: Error while making HTTP request.");
 		}
 
-		System.out.println(response.statusCode());
-		System.out.println(response.body());
+		if (response.statusCode() == 200) {
+			System.out.println("TelegramSender: Successfully sent.");
+		} else {
+			throw new SendingException("TelegramSender: HTTP request failed: " + response.statusCode());
+		}
 	}
 
 }
