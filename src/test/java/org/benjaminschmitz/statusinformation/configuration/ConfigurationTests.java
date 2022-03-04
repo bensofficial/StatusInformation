@@ -17,18 +17,11 @@
 
 package org.benjaminschmitz.statusinformation.configuration;
 
-import org.benjaminschmitz.statusinformation.api.API;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -68,6 +61,6 @@ public class ConfigurationTests {
 
     @Test
     void testConstructor() {
-        Configuration configuration = new Configuration();
+        assertDoesNotThrow(() -> new Configuration());
     }
 }

@@ -45,12 +45,12 @@ public class PropertyReaderTests {
     }
 
     @Test
-    void testConstructor() throws IOException {
-        PropertyReader propertyReader = new PropertyReader(Configuration.PROPERTIES_FILE);
+    void testConstructor() {
+        assertDoesNotThrow(() -> new PropertyReader(Configuration.PROPERTIES_FILE));
     }
 
     @Test
-    void testConstructorWithIllegalFile() throws IOException {
+    void testConstructorWithIllegalFile() {
         assertThrows(IOException.class, () -> new PropertyReader("THIS IS NO FILE"));
     }
 }
