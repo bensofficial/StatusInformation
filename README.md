@@ -32,21 +32,9 @@ java -jar StatusInformation-1.0-SNAPSHOT.jar
 ````
 
 ### For execution with GitHub Actions
-For execution with GitHub Actions you can add the following values as secrets in GitHub:
--	``DSB_USERNAME``
--	``DSB_PASSWORD``
--	``TELEGRAM_CHANNEL_ID``
--	``TELEGRAM_BOT_TOKEN``
+For execution with GitHub Actions you can add your configuration file as a secret in GitHub:
+Then you can execute the application like normal.
 
-After building you can use these as a parameter:
-````yml
-        env: # Environment variable
-          DSB_USERNAME: ${{ secrets.DSB_USERNAME }}
-          DSB_PASSWORD: ${{ secrets.DSB_PASSWORD }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: java -jar target/StatusInformation-1.0.0-jar-with-dependencies.jar $DSB_USERNAME $DSB_PASSWORD $TELEGRAM_CHANNEL_ID $TELEGRAM_BOT_TOKEN
-````
 ## Update for new version
 See [here](https://semver.org) for additional information of version naming.
 
