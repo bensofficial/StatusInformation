@@ -15,13 +15,14 @@
  *
  */
 
-package org.benjaminschmitz.statusinformation.senders;
+package org.benjaminschmitz.statusinformation.configuration;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.benjaminschmitz.statusinformation.senders.SendingException;
 import org.junit.jupiter.api.Test;
 
-class SendingExceptionTests {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class ConfigurationExceptionTests {
 
 	private static final String MESSAGE = "An error occurred.";
 

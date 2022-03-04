@@ -15,25 +15,20 @@
  *
  */
 
-package org.benjaminschmitz.statusinformation.senders;
+package org.benjaminschmitz.statusinformation.api;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.benjaminschmitz.statusinformation.configuration.Configuration;
 import org.junit.jupiter.api.Test;
 
-class SendingExceptionTests {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-	private static final String MESSAGE = "An error occurred.";
-
-	@Test
-	void testWithMessage() {
-		SendingException sendingException = new SendingException(MESSAGE);
-		assertEquals(MESSAGE, sendingException.getMessage());
-	}
-
-	@Test
-	void testWithoutMessage() {
-		SendingException sendingException = new SendingException();
-		assertEquals(null, sendingException.getMessage());
-	}
+public class APITests {
+    @Test
+    void testConstructor() {
+        Configuration configuration = new Configuration();
+        API api = new API(configuration);
+        assertEquals(configuration, api.getConfiguration());
+        assertNotNull(api.getGoodMorningMessageAPI());
+    }
 }

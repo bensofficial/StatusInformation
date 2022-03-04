@@ -1,3 +1,20 @@
+/*
+ * Copyright (c) 2022 Benjamin Schmitz <dev@benjamin-schmitz.org>.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+
 package org.benjaminschmitz.statusinformation.configuration;
 
 import org.apache.logging.log4j.LogManager;
@@ -6,22 +23,26 @@ import java.io.IOException;
 
 public final class Configuration {
     private static final Logger logger = LogManager.getLogger();
-    private static final String PROPERTIES_FILE = "StatusInformation.properties";
+    public static final String PROPERTIES_FILE = "StatusInformation.properties";
     private final PropertyReader propertyReader;
 
-    public static void main(String[] args) throws ConfigurationException {
-        Configuration c = new Configuration();
-        System.out.println(c.getLocation());
+    public Configuration() {
+        this(PROPERTIES_FILE);
     }
 
-    public Configuration() {
+    public Configuration(String propertiesFile) {
         logger.debug("Initialising");
         try {
-            propertyReader = new PropertyReader(PROPERTIES_FILE);
+            propertyReader = new PropertyReader(propertiesFile);
         } catch (IOException e) {
-            logger.fatal("Error loading " + PROPERTIES_FILE);
-            throw new ConfigurationException("Error loading " + PROPERTIES_FILE);
+            logger.fatal("Error loading " + propertiesFile);
+            throw new ConfigurationException("Error loading " + propertiesFile);
         }
+    }
+
+    public Configuration(PropertyReader propertyReader) {
+        logger.debug("Initialising");
+        this.propertyReader = propertyReader;
     }
 
     public String getLocation() {
