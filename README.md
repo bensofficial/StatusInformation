@@ -23,8 +23,14 @@ mvn spotbugs:spotbugs spotbugs:gui
 
 Building jar:
 ````Shell
-mvn clean compile assembly:single
+mvn clean install
 ````
+Executing the jar: (_Copying the jar is relevant due to the location of the configuration file._)
+````Shell
+cp target/StatusInformation-1.0-SNAPSHOT.jar .
+java -jar StatusInformation-1.0-SNAPSHOT.jar
+````
+
 ### For execution with GitHub Actions
 For execution with GitHub Actions you can add the following values as secrets in GitHub:
 -	``DSB_USERNAME``

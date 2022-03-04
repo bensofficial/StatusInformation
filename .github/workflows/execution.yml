@@ -23,11 +23,12 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build with Maven
-        run: mvn clean compile assembly:single
-      - name: Execution of the file
-        env: # Environment variable
-          DSB_USERNAME: ${{ secrets.DSB_USERNAME }}
-          DSB_PASSWORD: ${{ secrets.DSB_PASSWORD }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: java -jar target/StatusInformation-1.0.0-jar-with-dependencies.jar $DSB_USERNAME $DSB_PASSWORD $TELEGRAM_CHANNEL_ID $TELEGRAM_BOT_TOKEN
+        run: mvn clean install
+      - name: Load configuration file
+        env:
+          CONFIGFILE: ${{ secrets.CONFIGFILE }}
+        run: echo $CONFIGFILE > StatusInformation.properties
+      - name: Copy jar
+        run: cp target/StatusInformation-1.0-SNAPSHOT.jar .
+      - name: Execution of the jar
+        run: java -jar StatusInformation-1.0-SNAPSHOT.jar
