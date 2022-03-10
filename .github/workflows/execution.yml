@@ -25,9 +25,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
       - name: Load configuration file
-        env:
-          CONFIGFILE: ${{ secrets.CONFIGFILE }}
-        run: echo $CONFIGFILE > StatusInformation.properties
+        run: echo "${{ secrets.CONFIGFILE }}" > StatusInformation.properties
       - name: Copy jar
         run: cp target/StatusInformation-1.0-SNAPSHOT.jar .
       - name: Execution of the jar
