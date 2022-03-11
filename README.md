@@ -45,9 +45,11 @@ See [here](https://semver.org) for additional information of version naming.
 5.	Create new release
 
 ## Additional information
--	[CODE_OF_CONDUCT.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CODE_OF_CONDUCT.md)
--	[CONTRIBUTING.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CONTRIBUTING.md)
--	Feel free to contact the project manager: dev@benjamin-schmitz.org
+- [CODE_OF_CONDUCT.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CODE_OF_CONDUCT.md)
+- [CONTRIBUTING.md](https://github.com/bensofficial/StatusInformation/blob/main/.github/CONTRIBUTING.md)
+- Feel free to contact the project manager: dev@benjamin-schmitz.org
+
+Thanks to [celll](http://celll.de/) for their holidays api.
  
 The project started on July 9 2021 by [@bensofficial](https://github.com/bensofficial).
 
