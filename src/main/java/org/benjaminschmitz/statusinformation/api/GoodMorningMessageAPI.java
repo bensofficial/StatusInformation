@@ -46,8 +46,6 @@ public class GoodMorningMessageAPI implements APIInterface {
             logger.error("An error occurred while getting holidays. Assuming that today is no holiday.");
             return false;
         }
-        System.out.println(webContent);
-        System.out.println("(.*)" + configuration.getLocation() + "(.*)");
 
         return webContent.matches("(.*)" + configuration.getLocation() + "(.*)");
     }
