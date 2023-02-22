@@ -1,5 +1,6 @@
 name: Execution
 on:
+  workflow_dispatch:
   schedule:
     # It should run at 7 am German time
     # Summer time: Germany UTC+2 -> '0 5 * * *'
