@@ -47,7 +47,7 @@ public class GoodMorningMessageAPI implements APIInterface {
             return false;
         }
 
-        return webContent.matches("." + configuration.getLocation() + ".");
+        return webContent.matches("(.*)" + configuration.getLocation() + "(.*)");
     }
 
     @Override
