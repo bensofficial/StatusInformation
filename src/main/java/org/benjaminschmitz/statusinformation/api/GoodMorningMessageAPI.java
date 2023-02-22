@@ -50,7 +50,7 @@ public class GoodMorningMessageAPI implements APIInterface {
         // Removing HTML tags (https://stackoverflow.com/a/3149645)
         webContent = Jsoup.parse(webContent).text();
 
-        return webContent.matches("Ja,[a-zA-Z]+,"+configuration.getLocation());
+        return webContent.matches(".Bayern."+configuration.getLocation());
     }
 
     @Override
