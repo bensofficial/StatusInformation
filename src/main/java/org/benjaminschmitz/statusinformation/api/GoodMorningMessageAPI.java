@@ -47,10 +47,7 @@ public class GoodMorningMessageAPI implements APIInterface {
             return false;
         }
 
-        // Removing HTML tags (https://stackoverflow.com/a/3149645)
-        webContent = Jsoup.parse(webContent).text();
-
-        return webContent.matches(".Bayern."+configuration.getLocation());
+        return webContent.matches("." + configuration.getLocation() + ".");
     }
 
     @Override
